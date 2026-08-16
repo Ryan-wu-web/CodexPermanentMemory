@@ -1,0 +1,16 @@
+{
+  "basicMemory": {
+    "primaryProject": "<GLOBAL_MEMORY_PROJECT>",
+    "secondaryProjects": [],
+    "teamProjects": {},
+    "projectMode": "local",
+    "focus": "mixed",
+    "sessionProfile": "general",
+    "captureFolder": "conversations",
+    "rememberFolder": "inbox",
+    "recallTimeframe": "30d",
+    "checkpointOnCompact": true,
+    "captureEvents": true,
+    "placementConventions": "普通对话检查点放入 conversations/；轻量事实先放入 inbox/；稳定偏好放入 profile/；通用知识和经验经整理后分别放入 knowledge/ 与 experience/；非项目决策放入 decisions/；禁止保存凭据和完整逐字稿。"
+  }
+}

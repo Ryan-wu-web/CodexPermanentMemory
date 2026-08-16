@@ -1,0 +1,19 @@
+{
+  "basicMemory": {
+    "primaryProject": "<PROJECT_MEMORY_PROJECT>",
+    "secondaryProjects": [
+      "<GLOBAL_MEMORY_PROJECT>"
+    ],
+    "teamProjects": {},
+    "projectMode": "local",
+    "focus": "code/dev",
+    "sessionProfile": "coding",
+    "repository": "<REPOSITORY_IDENTIFIER>",
+    "captureFolder": "checkpoints",
+    "rememberFolder": "remember",
+    "recallTimeframe": "30d",
+    "checkpointOnCompact": true,
+    "captureEvents": true,
+    "placementConventions": "项目检查点放入 checkpoints/；项目事实和提醒放入 remember/；工程决策放入 decisions/；可复用经验先留在 experience/，经人工确认后再提升到全局记忆；禁止保存凭据和完整逐字稿。"
+  }
+}

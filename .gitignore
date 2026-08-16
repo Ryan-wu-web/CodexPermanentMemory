@@ -1,0 +1,45 @@
+# Local secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.local.json
+*.secret.json
+.codex/basic-memory.json
+
+# Personal memory and generated indexes
+memory-data/
+vault-data/
+private/
+backups/
+backup/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Obsidian local state
+.obsidian/workspace*.json
+.obsidian/plugins/*/data.json
+.trash/
+
+# Credentials and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# Backups and temporary files
+*.bak
+*.backup
+*.tmp
+*.temp
+*~
+
+# Local implementation notes; may contain machine-specific context
+docs/superpowers/
+
+# Test and tool artifacts
+.test-output/
+coverage/
