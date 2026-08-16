@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Codex Permanent Memory</title>
+  <desc id="desc">Local-first and project-isolated long-term memory for Codex, Basic Memory, and Obsidian.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090E1A"/>
+      <stop offset="0.48" stop-color="#102A43"/>
+      <stop offset="1" stop-color="#3B1D6E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#FFFFFF" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" rx="30" fill="url(#bg)"/>
+  <rect width="1200" height="420" rx="30" fill="url(#grid)"/>
+  <circle cx="1100" cy="36" r="240" fill="#38BDF8" opacity=".08"/>
+  <circle cx="1030" cy="408" r="270" fill="#A78BFA" opacity=".10"/>
+
+  <g opacity=".72" stroke="url(#accent)" stroke-width="2">
+    <path d="M895 96L1002 61L1092 116L1054 218L1130 293L1010 339L916 281L946 190Z" fill="none"/>
+    <path d="M895 96L946 190L1054 218L1092 116M946 190L916 281M1054 218L1010 339M916 281L1010 339"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="895" cy="96" r="8" fill="#38BDF8"/>
+    <circle cx="1002" cy="61" r="7" fill="#7DD3FC"/>
+    <circle cx="1092" cy="116" r="9" fill="#A78BFA"/>
+    <circle cx="946" cy="190" r="10" fill="#38BDF8"/>
+    <circle cx="1054" cy="218" r="12" fill="#C4B5FD"/>
+    <circle cx="916" cy="281" r="8" fill="#67E8F9"/>
+    <circle cx="1130" cy="293" r="7" fill="#A78BFA"/>
+    <circle cx="1010" cy="339" r="10" fill="#818CF8"/>
+  </g>
+
+  <rect x="70" y="82" width="72" height="5" rx="2.5" fill="url(#accent)"/>
+  <text x="70" y="154" fill="#FFFFFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="750" letter-spacing="-1.2">CODEX PERMANENT MEMORY</text>
+  <text x="73" y="199" fill="#CBD5E1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22">Local-first · Project-isolated · Human-readable</text>
+  <text x="73" y="237" fill="#94A3B8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17">Durable context for Codex + Basic Memory + Obsidian</text>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="650">
+    <rect x="72" y="293" width="132" height="38" rx="19" fill="#FFFFFF" fill-opacity=".075" stroke="#38BDF8" stroke-opacity=".36"/>
+    <text x="96" y="317" fill="#E0F2FE">LOCAL FIRST</text>
+    <rect x="218" y="293" width="158" height="38" rx="19" fill="#FFFFFF" fill-opacity=".075" stroke="#2DD4BF" stroke-opacity=".36"/>
+    <text x="242" y="317" fill="#CCFBF1">PROJECT SCOPE</text>
+    <rect x="390" y="293" width="138" height="38" rx="19" fill="#FFFFFF" fill-opacity=".075" stroke="#A78BFA" stroke-opacity=".40"/>
+    <text x="416" y="317" fill="#EDE9FE">MARKDOWN</text>
+  </g>
+</svg>

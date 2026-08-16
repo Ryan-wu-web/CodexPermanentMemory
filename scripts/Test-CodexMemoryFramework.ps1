@@ -20,6 +20,7 @@ $failures = [System.Collections.Generic.List[string]]::new()
 
 $requiredFiles = @(
     '.gitignore',
+    '.github/assets/readme/hero.svg',
     'LICENSE',
     'SECURITY.md',
     'README.md',
@@ -106,12 +107,30 @@ if ($syntaxErrors.Count -gt 0) {
 }
 Write-CheckResult -Name 'POWERSHELL_SYNTAX' -Passed ($syntaxErrors.Count -eq 0) -Detail ($syntaxErrors -join '; ')
 
+$svgErrors = [System.Collections.Generic.List[string]]::new()
+foreach ($svgFile in Get-ChildItem -LiteralPath (Join-Path $repoRoot '.github/assets/readme') -Filter '*.svg' -File -ErrorAction SilentlyContinue) {
+    try {
+        $document = [xml] (Get-Content -LiteralPath $svgFile.FullName -Raw)
+        if ($document.DocumentElement.LocalName -ne 'svg') {
+            throw '根元素不是 svg。'
+        }
+    }
+    catch {
+        $relativePath = [IO.Path]::GetRelativePath($repoRoot, $svgFile.FullName)
+        $svgErrors.Add("$relativePath：$($_.Exception.Message)")
+    }
+}
+if ($svgErrors.Count -gt 0) {
+    $failures.AddRange($svgErrors)
+}
+Write-CheckResult -Name 'SVG_ASSETS' -Passed ($svgErrors.Count -eq 0) -Detail ($svgErrors -join '; ')
+
 $gitCandidates = @(& git -C $repoRoot ls-files --cached --others --exclude-standard 2>$null)
 if ($LASTEXITCODE -ne 0) {
     throw '无法读取 Git 跟踪候选文件。请确认脚本在 Git 仓库中运行。'
 }
 
-$textExtensions = @('.md', '.json', '.ps1', '.psm1', '.txt', '.yml', '.yaml', '.gitignore')
+$textExtensions = @('.md', '.json', '.ps1', '.psm1', '.txt', '.yml', '.yaml', '.svg', '.gitignore')
 $forbiddenPatterns = [ordered]@{
     'personal Windows profile path' = [regex]::Escape(('C:' + [char]92 + 'Users' + [char]92 + 'Len' + 'ovo'))
     'personal vault path' = [regex]::Escape(('F:' + [char]92 + 'Obsidian_' + 'notebook'))
